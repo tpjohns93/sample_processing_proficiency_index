@@ -1,0 +1,761 @@
+Date,Parent_group,Technician,Replicate,Isolation_event,Cell_type,Tube_type,Additive_vol,Protocol,Total,Dead,Live,Tube_volume
+12/2/24,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13100000,100000,13000000,3.6
+12/2/24,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12600000,0,12600000,3.7
+12/2/24,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,13362000,102000,13260000,3.65
+12/2/24,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,12852000,0,12852000,3.75
+6/5/25,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8200000,100000,8100000,3.8
+6/5/25,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9200000,100000,9100000,3.4
+6/5/25,Other,Technician C,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,8364000,102000,8262000,3.85
+6/5/25,Other,Technician C,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,9384000,102000,9282000,3.45
+6/9/25,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16700000,18000,16500000,3.5
+6/9/25,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7070000,280000,6790000,3.3
+6/9/25,Other,Technician C,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,17034000,18360,16830000,3.55
+6/9/25,Other,Technician C,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,7211400,285600,6925800,3.35
+6/11/25,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13900000,100000,13800000,3.5
+6/11/25,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12000000,120000,11900000,3.4
+6/11/25,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,14178000,102000,14076000,3.55
+6/11/25,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,12240000,122400,12138000,3.45
+6/24/25,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11100000,120000,11000000,3.5
+6/24/25,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12700000,240000,12500000,3.5
+6/24/25,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,11322000,122400,11220000,3.55
+6/24/25,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,12954000,244800,12750000,3.55
+6/26/25,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11500000,60000,11400000,3.5
+6/26/25,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10400000,120000,10300000,3.4
+6/26/25,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,11730000,61200,11628000,3.55
+6/26/25,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,10608000,122400,10506000,3.45
+7/14/25,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15300000,260000,15000000,3.6
+7/14/25,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14100000,40000,14100000,3.6
+7/14/25,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,15606000,265200,15300000,3.65
+7/14/25,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,14382000,40800,14382000,3.65
+7/24/25,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13100000,120000,13000000,3.5
+7/24/25,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12000000,720000,11300000,3.33
+7/24/25,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,13362000,122400,13260000,3.55
+7/24/25,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,12240000,734400,11526000,3.38
+8/4/25,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7000000,20000,6980000,3.4
+8/4/25,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8570000,80000,8490000,3.6
+8/4/25,Other,Technician C,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,7140000,20400,7119600,3.45
+8/4/25,Other,Technician C,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,8741400,81600,8659800,3.65
+8/11/25,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14800000,0,14800000,3.6
+8/11/25,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10900000,40000,10900000,3
+8/11/25,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,15096000,0,15096000,3.65
+8/11/25,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,11118000,40800,11118000,3.05
+8/25/25,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17000000,140000,16900000,3.7
+8/25/25,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17000000,160000,16800000,3.88
+8/25/25,Other,Technician C,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,17340000,142800,17238000,3.75
+8/25/25,Other,Technician C,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,17340000,163200,17136000,3.93
+9/22/25,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7940000,0,7940000,3.33
+9/22/25,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7690000,40000,7650000,3.3
+9/22/25,Other,Technician C,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,8098800,0,8098800,3.38
+9/22/25,Other,Technician C,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,7843800,40800,7803000,3.35
+9/30/25,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,9370000,200000,9170000,9
+9/30/25,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,11100000,140000,11000000,8.75
+9/30/25,Yokoyama Lab,Technician C,A,2,PBMC,ACD,1.5,Other Lab Protocol,9557400,204000,9353400,9.05
+9/30/25,Yokoyama Lab,Technician C,B,2,PBMC,ACD,1.5,Other Lab Protocol,11322000,142800,11220000,8.8
+10/6/25,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,21500000,500000,21000000,9
+10/6/25,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,20200000,520000,19700000,9
+10/6/25,Yokoyama Lab,Technician C,A,2,PBMC,ACD,1.5,Other Lab Protocol,21930000,510000,21420000,9.05
+10/6/25,Yokoyama Lab,Technician C,B,2,PBMC,ACD,1.5,Other Lab Protocol,20604000,530400,20094000,9.05
+10/14/25,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,21800000,660000,21100000,9.5
+10/14/25,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,22400000,1000000,21400000,9.5
+10/14/25,Yokoyama Lab,Technician C,A,2,PBMC,ACD,1.5,Other Lab Protocol,22236000,673200,21522000,9.5
+10/14/25,Yokoyama Lab,Technician C,B,2,PBMC,ACD,1.5,Other Lab Protocol,22848000,1020000,21828000,9.5
+10/20/25,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,8340000,360000,7980000,9.25
+10/20/25,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,8540000,300000,8240000,9.25
+10/20/25,Yokoyama Lab,Technician C,A,2,PBMC,ACD,1.5,Other Lab Protocol,8506800,367200,8139600,9.3
+10/20/25,Yokoyama Lab,Technician C,B,2,PBMC,ACD,1.5,Other Lab Protocol,8710800,306000,8404800,9.3
+10/21/25,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,25000000,420000,24600000,9.25
+10/21/25,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,20600000,340000,20300000,9
+10/21/25,Yokoyama Lab,Technician C,A,2,PBMC,ACD,1.5,Other Lab Protocol,25500000,428400,25092000,9.3
+10/21/25,Yokoyama Lab,Technician C,B,2,PBMC,ACD,1.5,Other Lab Protocol,21012000,346800,20706000,9.05
+10/27/25,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,12200000,540000,11700000,9
+10/27/25,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,14600000,260000,14300000,9
+10/27/25,Yokoyama Lab,Technician C,A,2,PBMC,ACD,1.5,Other Lab Protocol,12444000,550800,11934000,9.05
+10/27/25,Yokoyama Lab,Technician C,B,2,PBMC,ACD,1.5,Other Lab Protocol,14892000,265200,14586000,9.05
+10/29/25,Yokoyama Lab,Technician C,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,16700000,540000,16200000,9
+10/29/25,Yokoyama Lab,Technician C,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,18400000,580000,17800000,9.5
+10/29/25,Yokoyama Lab,Technician C,A,2,PBMC,Sodium heparin,0,Other Lab Protocol,17034000,550800,16524000,9.05
+10/29/25,Yokoyama Lab,Technician C,B,2,PBMC,Sodium heparin,0,Other Lab Protocol,18768000,591600,18156000,9.5
+11/3/25,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,9350000,260000,9090000,9
+11/3/25,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,10200000,0,10200000,9
+11/3/25,Yokoyama Lab,Technician A,A,2,PBMC,Sodium heparin,0,Other Lab Protocol,9537000,265200,9271800,9.05
+11/3/25,Yokoyama Lab,Technician A,B,2,PBMC,Sodium heparin,0,Other Lab Protocol,10404000,0,10404000,9.05
+11/20/25,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,16000000,820000,15200000,9.5
+11/20/25,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,16700000,460000,16200000,9.5
+11/20/25,Yokoyama Lab,Technician A,A,2,PBMC,Sodium heparin,0,Other Lab Protocol,16320000,836400,15504000,9.5
+11/20/25,Yokoyama Lab,Technician A,B,2,PBMC,Sodium heparin,0,Other Lab Protocol,17034000,469200,16524000,9.5
+12/2/25,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13624000,104000,13520000,3.7
+12/2/25,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13104000,0,13104000,3.8
+1/5/26,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,10700000,560000,10100000,8.25
+1/5/26,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,9450000,430000,9030000,8.25
+1/5/26,Yokoyama Lab,Technician A,A,2,PBMC,Sodium heparin,0,Other Lab Protocol,10914000,571200,10302000,8.3
+1/5/26,Yokoyama Lab,Technician A,B,2,PBMC,Sodium heparin,0,Other Lab Protocol,9639000,438600,9210600,8.3
+1/12/26,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16800000,740000,16100000,9.25
+1/12/26,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,14500000,180000,14300000,9
+1/12/26,Other,Technician A,A,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17136000,754800,16422000,9.3
+1/12/26,Other,Technician A,B,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,14790000,183600,14586000,9.05
+1/20/26,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11200000,540000,10700000,9.25
+1/20/26,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11200000,580000,10600000,9
+1/20/26,Other,Technician A,A,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11424000,550800,10914000,9.3
+1/20/26,Other,Technician A,B,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11424000,591600,10812000,9.05
+1/21/26,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,10400000,500000,9920000,9
+1/21/26,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,14500000,260000,14300000,9
+1/21/26,Other,Technician A,A,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,10608000,510000,10118400,9.05
+1/21/26,Other,Technician A,B,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,14790000,265200,14586000,9.05
+1/26/26,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,6340000,220000,6120000,8.5
+1/26/26,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,4630000,200000,4430000,8.5
+1/26/26,Other,Technician A,A,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,6466800,224400,6242400,8.55
+1/26/26,Other,Technician A,B,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,4722600,204000,4518600,8.55
+2/2/26,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15600000,560000,15000000,9
+2/2/26,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12500000,320000,12200000,8.75
+2/2/26,Other,Technician A,A,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15912000,571200,15300000,9.05
+2/2/26,Other,Technician A,B,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12750000,326400,12444000,8.8
+2/3/26,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16100000,740000,15400000,9.25
+2/3/26,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,13700000,480000,13200000,9
+2/3/26,Other,Technician A,A,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16422000,754800,15708000,9.3
+2/3/26,Other,Technician A,B,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,13974000,489600,13464000,9.05
+2/9/26,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11300000,840000,10500000,6.75
+2/9/26,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,6390000,460000,5930000,4.5
+2/9/26,Other,Technician A,A,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11526000,856800,10710000,6.8
+2/9/26,Other,Technician A,B,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,6517800,469200,6048600,4.55
+2/17/26,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16400000,640000,15800000,8
+2/17/26,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15200000,580000,14600000,8
+2/17/26,Other,Technician A,A,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16728000,652800,16116000,8.05
+2/17/26,Other,Technician A,B,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15504000,591600,14892000,8.05
+2/23/26,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,10700000,500000,10200000,9
+2/23/26,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,9620000,200000,9420000,9.25
+2/23/26,Other,Technician A,A,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,10914000,510000,10404000,9.05
+2/23/26,Other,Technician A,B,2,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,9812400,204000,9608400,9.3
+6/5/26,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8528000,104000,8424000,3.9
+6/5/26,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9568000,104000,9464000,3.5
+6/9/26,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17368000,18720,17160000,3.6
+6/9/26,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7352800,291200,7061600,3.4
+6/10/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16500000,160000,16300000,3.5
+6/10/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10500000,180000,10300000,3.6
+6/10/26,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,16830000,163200,16626000,3.55
+6/10/26,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,10710000,183600,10506000,3.65
+6/11/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14456000,104000,14352000,3.6
+6/11/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12480000,124800,12376000,3.5
+6/24/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11544000,124800,11440000,3.6
+6/24/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13208000,249600,13000000,3.6
+6/26/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11960000,62400,11856000,3.6
+6/26/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10816000,124800,10712000,3.5
+7/14/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15912000,270400,15600000,3.7
+7/14/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14664000,41600,14664000,3.7
+7/24/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13624000,124800,13520000,3.6
+7/24/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12480000,748800,11752000,3.43
+8/4/26,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7280000,20800,7259200,3.5
+8/4/26,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8912800,83200,8829600,3.7
+8/11/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15392000,0,15392000,3.7
+8/11/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11336000,41600,11336000,3.1
+8/25/26,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17680000,145600,17576000,3.8
+8/25/26,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17680000,166400,17472000,3.98
+9/2/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17000000,140000,16900000,3.7
+9/2/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17000000,160000,16800000,3.88
+9/2/26,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,17340000,142800,17238000,3.75
+9/2/26,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,17340000,163200,17136000,3.93
+9/5/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7940000,0,7940000,3.33
+9/5/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7690000,40000,7650000,3.3
+9/5/26,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,8098800,0,8098800,3.38
+9/5/26,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,7843800,40800,7803000,3.35
+9/8/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8200000,100000,8100000,3.8
+9/8/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9200000,100000,9100000,3.4
+9/8/26,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,8364000,102000,8262000,3.85
+9/8/26,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,9384000,102000,9282000,3.45
+9/11/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16700000,18000,16500000,3.5
+9/11/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7070000,280000,6790000,3.3
+9/11/26,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,17034000,18360,16830000,3.55
+9/11/26,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,7211400,285600,6925800,3.35
+9/14/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16500000,160000,16300000,3.5
+9/14/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10500000,180000,10300000,3.6
+9/14/26,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,16830000,163200,16626000,3.55
+9/14/26,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,10710000,183600,10506000,3.65
+9/17/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13900000,100000,13800000,3.5
+9/17/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12000000,120000,11900000,3.4
+9/17/26,Other,Technician B,A,2,Fibroblast,Cell culture,0,Cell Culture Protocol,14178000,102000,14076000,3.55
+9/17/26,Other,Technician B,B,2,Fibroblast,Cell culture,0,Cell Culture Protocol,12240000,122400,12138000,3.45
+9/22/26,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8257600,0,8257600,3.43
+9/22/26,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7997600,41600,7956000,3.4
+9/30/26,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,9744800,208000,9536800,9.1
+9/30/26,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,11544000,145600,11440000,8.85
+10/6/26,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,22360000,520000,21840000,9.1
+10/6/26,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,21008000,540800,20488000,9.1
+10/14/26,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,22672000,686400,21944000,9.5
+10/14/26,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,23296000,1040000,22256000,9.5
+10/20/26,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,8673600,374400,8299200,9.35
+10/20/26,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,8881600,312000,8569600,9.35
+10/21/26,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,26000000,436800,25584000,9.35
+10/21/26,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,21424000,353600,21112000,9.1
+10/27/26,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,12688000,561600,12168000,9.1
+10/27/26,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,15184000,270400,14872000,9.1
+10/29/26,Yokoyama Lab,Technician C,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,17368000,561600,16848000,9.1
+10/29/26,Yokoyama Lab,Technician C,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,19136000,603200,18512000,9.5
+11/3/26,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,9724000,270400,9453600,9.1
+11/3/26,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,10608000,0,10608000,9.1
+11/20/26,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,16640000,852800,15808000,9.5
+11/20/26,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,17368000,478400,16848000,9.5
+12/2/26,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13886000,106000,13780000,3.75
+12/2/26,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13356000,0,13356000,3.85
+1/5/27,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,11128000,582400,10504000,8.35
+1/5/27,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,9828000,447200,9391200,8.35
+1/12/27,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17472000,769600,16744000,9.35
+1/12/27,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15080000,187200,14872000,9.1
+1/20/27,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11648000,561600,11128000,9.35
+1/20/27,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11648000,603200,11024000,9.1
+1/21/27,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,10816000,520000,10316800,9.1
+1/21/27,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15080000,270400,14872000,9.1
+1/26/27,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,6593600,228800,6364800,8.6
+1/26/27,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,4815200,208000,4607200,8.6
+2/2/27,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16224000,582400,15600000,9.1
+2/2/27,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,13000000,332800,12688000,8.85
+2/3/27,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16744000,769600,16016000,9.35
+2/3/27,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,14248000,499200,13728000,9.1
+2/9/27,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11752000,873600,10920000,6.85
+2/9/27,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,6645600,478400,6167200,4.6
+2/17/27,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17056000,665600,16432000,8.1
+2/17/27,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15808000,603200,15184000,8.1
+2/23/27,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11128000,520000,10608000,9.1
+2/23/27,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,10004800,208000,9796800,9.35
+6/5/27,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8692000,106000,8586000,3.95
+6/5/27,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9752000,106000,9646000,3.55
+6/9/27,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17702000,19080,17490000,3.65
+6/9/27,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7494200,296800,7197400,3.45
+6/10/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17160000,166400,16952000,3.6
+6/10/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10920000,187200,10712000,3.7
+6/11/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14734000,106000,14628000,3.65
+6/11/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12720000,127200,12614000,3.55
+6/24/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11766000,127200,11660000,3.65
+6/24/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13462000,254400,13250000,3.65
+6/26/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12190000,63600,12084000,3.65
+6/26/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11024000,127200,10918000,3.55
+7/14/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16218000,275600,15900000,3.75
+7/14/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14946000,42400,14946000,3.75
+7/24/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13886000,127200,13780000,3.65
+7/24/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12720000,763200,11978000,3.48
+8/4/27,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7420000,21200,7398800,3.55
+8/4/27,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9084200,84800,8999400,3.75
+8/11/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15688000,0,15688000,3.75
+8/11/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11554000,42400,11554000,3.15
+8/25/27,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18020000,148400,17914000,3.85
+8/25/27,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18020000,169600,17808000,4
+9/2/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17680000,145600,17576000,3.8
+9/2/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17680000,166400,17472000,3.98
+9/5/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8257600,0,8257600,3.43
+9/5/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7997600,41600,7956000,3.4
+9/8/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8528000,104000,8424000,3.9
+9/8/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9568000,104000,9464000,3.5
+9/11/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17368000,18720,17160000,3.6
+9/11/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7352800,291200,7061600,3.4
+9/14/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17160000,166400,16952000,3.6
+9/14/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10920000,187200,10712000,3.7
+9/17/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14456000,104000,14352000,3.6
+9/17/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12480000,124800,12376000,3.5
+9/22/27,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8416400,0,8416400,3.48
+9/22/27,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8151400,42400,8109000,3.45
+9/30/27,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,9932200,212000,9720200,9.15
+9/30/27,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,11766000,148400,11660000,8.9
+10/6/27,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,22790000,530000,22260000,9.15
+10/6/27,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,21412000,551200,20882000,9.15
+10/14/27,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,23108000,699600,22366000,9.5
+10/14/27,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,23744000,1060000,22684000,9.5
+10/20/27,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,8840400,381600,8458800,9.4
+10/20/27,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,9052400,318000,8734400,9.4
+10/21/27,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,26500000,445200,26076000,9.4
+10/21/27,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,21836000,360400,21518000,9.15
+10/27/27,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,12932000,572400,12402000,9.15
+10/27/27,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,15476000,275600,15158000,9.15
+10/29/27,Yokoyama Lab,Technician C,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,17702000,572400,17172000,9.15
+10/29/27,Yokoyama Lab,Technician C,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,19504000,614800,18868000,9.5
+11/3/27,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,9911000,275600,9635400,9.15
+11/3/27,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,10812000,0,10812000,9.15
+11/20/27,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,16960000,869200,16112000,9.5
+11/20/27,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,17702000,487600,17172000,9.5
+12/2/27,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14148000,108000,14040000,3.8
+12/2/27,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13608000,0,13608000,3.9
+1/5/28,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,11342000,593600,10706000,8.4
+1/5/28,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,10017000,455800,9571800,8.4
+1/12/28,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17808000,784400,17066000,9.4
+1/12/28,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15370000,190800,15158000,9.15
+1/20/28,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11872000,572400,11342000,9.4
+1/20/28,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11872000,614800,11236000,9.15
+1/21/28,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11024000,530000,10515200,9.15
+1/21/28,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15370000,275600,15158000,9.15
+1/26/28,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,6720400,233200,6487200,8.65
+1/26/28,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,4907800,212000,4695800,8.65
+2/2/28,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16536000,593600,15900000,9.15
+2/2/28,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,13250000,339200,12932000,8.9
+2/3/28,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17066000,784400,16324000,9.4
+2/3/28,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,14522000,508800,13992000,9.15
+2/9/28,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11978000,890400,11130000,6.9
+2/9/28,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,6773400,487600,6285800,4.65
+2/17/28,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17384000,678400,16748000,8.15
+2/17/28,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16112000,614800,15476000,8.15
+2/23/28,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11342000,530000,10812000,9.15
+2/23/28,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,10197200,212000,9985200,9.4
+6/5/28,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8856000,108000,8748000,4
+6/5/28,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9936000,108000,9828000,3.6
+6/9/28,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18036000,19440,17820000,3.7
+6/9/28,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7635600,302400,7333200,3.5
+6/10/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17490000,169600,17278000,3.65
+6/10/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11130000,190800,10918000,3.75
+6/11/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15012000,108000,14904000,3.7
+6/11/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12960000,129600,12852000,3.6
+6/24/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11988000,129600,11880000,3.7
+6/24/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13716000,259200,13500000,3.7
+6/26/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12420000,64800,12312000,3.7
+6/26/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11232000,129600,11124000,3.6
+7/14/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16524000,280800,16200000,3.8
+7/14/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15228000,43200,15228000,3.8
+7/24/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14148000,129600,14040000,3.7
+7/24/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12960000,777600,12204000,3.53
+8/4/28,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7560000,21600,7538400,3.6
+8/4/28,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9255600,86400,9169200,3.8
+8/11/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15984000,0,15984000,3.8
+8/11/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11772000,43200,11772000,3.2
+8/25/28,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18360000,151200,18252000,3.9
+8/25/28,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18360000,172800,18144000,4
+9/2/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18020000,148400,17914000,3.85
+9/2/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18020000,169600,17808000,4
+9/5/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8416400,0,8416400,3.48
+9/5/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8151400,42400,8109000,3.45
+9/8/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8692000,106000,8586000,3.95
+9/8/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9752000,106000,9646000,3.55
+9/11/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17702000,19080,17490000,3.65
+9/11/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7494200,296800,7197400,3.45
+9/14/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17490000,169600,17278000,3.65
+9/14/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11130000,190800,10918000,3.75
+9/17/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14734000,106000,14628000,3.65
+9/17/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12720000,127200,12614000,3.55
+9/22/28,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8575200,0,8575200,3.53
+9/22/28,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8305200,43200,8262000,3.5
+9/30/28,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,10119600,216000,9903600,9.2
+9/30/28,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,11988000,151200,11880000,8.95
+10/6/28,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,23220000,540000,22680000,9.2
+10/6/28,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,21816000,561600,21276000,9.2
+10/14/28,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,23544000,712800,22788000,9.5
+10/14/28,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,24192000,1080000,23112000,9.5
+10/20/28,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,9007200,388800,8618400,9.45
+10/20/28,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,9223200,324000,8899200,9.45
+10/21/28,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,27000000,453600,26568000,9.45
+10/21/28,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,22248000,367200,21924000,9.2
+10/27/28,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,13176000,583200,12636000,9.2
+10/27/28,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,15768000,280800,15444000,9.2
+10/29/28,Yokoyama Lab,Technician C,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,18036000,583200,17496000,9.2
+10/29/28,Yokoyama Lab,Technician C,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,19872000,626400,19224000,9.5
+11/3/28,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,10098000,280800,9817200,9.2
+11/3/28,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,11016000,0,11016000,9.2
+11/20/28,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,17280000,885600,16416000,9.5
+11/20/28,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,18036000,496800,17496000,9.5
+12/2/28,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14410000,110000,14300000,3.85
+12/2/28,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13860000,0,13860000,3.95
+1/5/29,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,11556000,604800,10908000,8.45
+1/5/29,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,10206000,464400,9752400,8.45
+1/12/29,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,18144000,799200,17388000,9.45
+1/12/29,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15660000,194400,15444000,9.2
+1/20/29,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12096000,583200,11556000,9.45
+1/20/29,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12096000,626400,11448000,9.2
+1/21/29,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11232000,540000,10713600,9.2
+1/21/29,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15660000,280800,15444000,9.2
+1/26/29,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,6847200,237600,6609600,8.7
+1/26/29,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,5000400,216000,4784400,8.7
+2/2/29,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16848000,604800,16200000,9.2
+2/2/29,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,13500000,345600,13176000,8.95
+2/3/29,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17388000,799200,16632000,9.45
+2/3/29,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,14796000,518400,14256000,9.2
+2/9/29,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12204000,907200,11340000,6.95
+2/9/29,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,6901200,496800,6404400,4.7
+2/17/29,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17712000,691200,17064000,8.2
+2/17/29,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16416000,626400,15768000,8.2
+2/23/29,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11556000,540000,11016000,9.2
+2/23/29,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,10389600,216000,10173600,9.45
+6/5/29,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9020000,110000,8910000,4
+6/5/29,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10120000,110000,10010000,3.65
+6/9/29,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18370000,19800,18150000,3.75
+6/9/29,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7777000,308000,7469000,3.55
+6/10/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17820000,172800,17604000,3.7
+6/10/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11340000,194400,11124000,3.8
+6/11/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15290000,110000,15180000,3.75
+6/11/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13200000,132000,13090000,3.65
+6/24/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12210000,132000,12100000,3.75
+6/24/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13970000,264000,13750000,3.75
+6/26/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12650000,66000,12540000,3.75
+6/26/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11440000,132000,11330000,3.65
+7/14/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16830000,286000,16500000,3.85
+7/14/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15510000,44000,15510000,3.85
+7/24/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14410000,132000,14300000,3.75
+7/24/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13200000,792000,12430000,3.58
+8/4/29,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7700000,22000,7678000,3.65
+8/4/29,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9427000,88000,9339000,3.85
+8/11/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16280000,0,16280000,3.85
+8/11/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11990000,44000,11990000,3.25
+8/25/29,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18700000,154000,18590000,3.95
+8/25/29,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18700000,176000,18480000,4
+9/2/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18360000,151200,18252000,3.9
+9/2/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18360000,172800,18144000,4
+9/5/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8575200,0,8575200,3.53
+9/5/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8305200,43200,8262000,3.5
+9/8/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8856000,108000,8748000,4
+9/8/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9936000,108000,9828000,3.6
+9/11/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18036000,19440,17820000,3.7
+9/11/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7635600,302400,7333200,3.5
+9/14/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17820000,172800,17604000,3.7
+9/14/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11340000,194400,11124000,3.8
+9/17/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15012000,108000,14904000,3.7
+9/17/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12960000,129600,12852000,3.6
+9/22/29,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8734000,0,8734000,3.58
+9/22/29,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8459000,44000,8415000,3.55
+9/30/29,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,10307000,220000,10087000,9.25
+9/30/29,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,12210000,154000,12100000,9
+10/6/29,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,23650000,550000,23100000,9.25
+10/6/29,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,22220000,572000,21670000,9.25
+10/14/29,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,23980000,726000,23210000,9.5
+10/14/29,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,24640000,1100000,23540000,9.5
+10/20/29,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,9174000,396000,8778000,9.5
+10/20/29,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,9394000,330000,9064000,9.5
+10/21/29,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,27500000,462000,27060000,9.5
+10/21/29,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,22660000,374000,22330000,9.25
+10/27/29,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,13420000,594000,12870000,9.25
+10/27/29,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,16060000,286000,15730000,9.25
+10/29/29,Yokoyama Lab,Technician C,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,18370000,594000,17820000,9.25
+10/29/29,Yokoyama Lab,Technician C,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,20240000,638000,19580000,9.5
+11/3/29,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,10285000,286000,9999000,9.25
+11/3/29,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,11220000,0,11220000,9.25
+11/20/29,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,17600000,902000,16720000,9.5
+11/20/29,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,18370000,506000,17820000,9.5
+12/2/29,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14672000,112000,14560000,3.9
+12/2/29,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14112000,0,14112000,4
+1/5/30,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,11770000,616000,11110000,8.5
+1/5/30,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,10395000,473000,9933000,8.5
+1/12/30,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,18480000,814000,17710000,9.5
+1/12/30,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15950000,198000,15730000,9.25
+1/20/30,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12320000,594000,11770000,9.5
+1/20/30,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12320000,638000,11660000,9.25
+1/21/30,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11440000,550000,10912000,9.25
+1/21/30,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15950000,286000,15730000,9.25
+1/26/30,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,6974000,242000,6732000,8.75
+1/26/30,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,5093000,220000,4873000,8.75
+2/2/30,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17160000,616000,16500000,9.25
+2/2/30,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,13750000,352000,13420000,9
+2/3/30,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17710000,814000,16940000,9.5
+2/3/30,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15070000,528000,14520000,9.25
+2/9/30,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12430000,924000,11550000,7
+2/9/30,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,7029000,506000,6523000,4.75
+2/17/30,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,18040000,704000,17380000,8.25
+2/17/30,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16720000,638000,16060000,8.25
+2/23/30,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11770000,550000,11220000,9.25
+2/23/30,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,10582000,220000,10362000,9.5
+6/5/30,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9184000,112000,9072000,4
+6/5/30,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10304000,112000,10192000,3.7
+6/9/30,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18704000,20160,18480000,3.8
+6/9/30,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7918400,313600,7604800,3.6
+6/10/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18150000,176000,17930000,3.75
+6/10/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11550000,198000,11330000,3.85
+6/11/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15568000,112000,15456000,3.8
+6/11/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13440000,134400,13328000,3.7
+6/24/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12432000,134400,12320000,3.8
+6/24/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14224000,268800,14000000,3.8
+6/26/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12880000,67200,12768000,3.8
+6/26/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11648000,134400,11536000,3.7
+7/14/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17136000,291200,16800000,3.9
+7/14/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15792000,44800,15792000,3.9
+7/24/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14672000,134400,14560000,3.8
+7/24/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13440000,806400,12656000,3.63
+8/4/30,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7840000,22400,7817600,3.7
+8/4/30,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9598400,89600,9508800,3.9
+8/11/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16576000,0,16576000,3.9
+8/11/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12208000,44800,12208000,3.3
+8/25/30,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19040000,156800,18928000,4
+8/25/30,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19040000,179200,18816000,4
+9/2/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18700000,154000,18590000,3.95
+9/2/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18700000,176000,18480000,4
+9/5/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8734000,0,8734000,3.58
+9/5/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8459000,44000,8415000,3.55
+9/8/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9020000,110000,8910000,4
+9/8/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10120000,110000,10010000,3.65
+9/11/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18370000,19800,18150000,3.75
+9/11/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7777000,308000,7469000,3.55
+9/14/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18150000,176000,17930000,3.75
+9/14/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11550000,198000,11330000,3.85
+9/17/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15290000,110000,15180000,3.75
+9/17/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13200000,132000,13090000,3.65
+9/22/30,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8892800,0,8892800,3.63
+9/22/30,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8612800,44800,8568000,3.6
+9/30/30,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,10494400,224000,10270400,9.3
+9/30/30,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,12432000,156800,12320000,9.05
+10/6/30,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,24080000,560000,23520000,9.3
+10/6/30,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,22624000,582400,22064000,9.3
+10/14/30,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,24416000,739200,23632000,9.5
+10/14/30,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,25088000,1120000,23968000,9.5
+10/20/30,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,9340800,403200,8937600,9.5
+10/20/30,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,9564800,336000,9228800,9.5
+10/21/30,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,28000000,470400,27552000,9.5
+10/21/30,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,23072000,380800,22736000,9.3
+10/27/30,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,13664000,604800,13104000,9.3
+10/27/30,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,16352000,291200,16016000,9.3
+10/29/30,Yokoyama Lab,Technician C,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,18704000,604800,18144000,9.3
+10/29/30,Yokoyama Lab,Technician C,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,20608000,649600,19936000,9.5
+11/3/30,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,10472000,291200,10180800,9.3
+11/3/30,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,11424000,0,11424000,9.3
+11/20/30,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,17920000,918400,17024000,9.5
+11/20/30,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,18704000,515200,18144000,9.5
+12/2/30,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14934000,114000,14820000,3.95
+12/2/30,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14364000,0,14364000,4
+1/5/31,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,11984000,627200,11312000,8.55
+1/5/31,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,10584000,481600,10113600,8.55
+1/12/31,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,18816000,828800,18032000,9.5
+1/12/31,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16240000,201600,16016000,9.3
+1/20/31,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12544000,604800,11984000,9.5
+1/20/31,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12544000,649600,11872000,9.3
+1/21/31,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11648000,560000,11110400,9.3
+1/21/31,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16240000,291200,16016000,9.3
+1/26/31,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,7100800,246400,6854400,8.8
+1/26/31,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,5185600,224000,4961600,8.8
+2/2/31,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17472000,627200,16800000,9.3
+2/2/31,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,14000000,358400,13664000,9.05
+2/3/31,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,18032000,828800,17248000,9.5
+2/3/31,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15344000,537600,14784000,9.3
+2/9/31,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12656000,940800,11760000,7.05
+2/9/31,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,7156800,515200,6641600,4.8
+2/17/31,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,18368000,716800,17696000,8.3
+2/17/31,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17024000,649600,16352000,8.3
+2/23/31,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11984000,560000,11424000,9.3
+2/23/31,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,10774400,224000,10550400,9.5
+6/5/31,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9348000,114000,9234000,4
+6/5/31,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10488000,114000,10374000,3.75
+6/9/31,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19038000,20520,18810000,3.85
+6/9/31,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8059800,319200,7740600,3.65
+6/10/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18480000,179200,18256000,3.8
+6/10/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11760000,201600,11536000,3.9
+6/11/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15846000,114000,15732000,3.85
+6/11/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13680000,136800,13566000,3.75
+6/24/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12654000,136800,12540000,3.85
+6/24/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14478000,273600,14250000,3.85
+6/26/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13110000,68400,12996000,3.85
+6/26/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11856000,136800,11742000,3.75
+7/14/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17442000,296400,17100000,3.95
+7/14/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16074000,45600,16074000,3.95
+7/24/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14934000,136800,14820000,3.85
+7/24/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13680000,820800,12882000,3.68
+8/4/31,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7980000,22800,7957200,3.75
+8/4/31,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9769800,91200,9678600,3.95
+8/11/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16872000,0,16872000,3.95
+8/11/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12426000,45600,12426000,3.35
+8/25/31,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19380000,159600,19266000,4
+8/25/31,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19380000,182400,19152000,4
+9/2/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19040000,156800,18928000,4
+9/2/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19040000,179200,18816000,4
+9/5/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8892800,0,8892800,3.63
+9/5/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8612800,44800,8568000,3.6
+9/8/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9184000,112000,9072000,4
+9/8/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10304000,112000,10192000,3.7
+9/11/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18704000,20160,18480000,3.8
+9/11/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,7918400,313600,7604800,3.6
+9/14/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18480000,179200,18256000,3.8
+9/14/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11760000,201600,11536000,3.9
+9/17/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15568000,112000,15456000,3.8
+9/17/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13440000,134400,13328000,3.7
+9/22/31,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9051600,0,9051600,3.68
+9/22/31,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8766600,45600,8721000,3.65
+9/30/31,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,10681800,228000,10453800,9.35
+9/30/31,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,12654000,159600,12540000,9.1
+10/6/31,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,24510000,570000,23940000,9.35
+10/6/31,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,23028000,592800,22458000,9.35
+10/14/31,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,24852000,752400,24054000,9.5
+10/14/31,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,25536000,1140000,24396000,9.5
+10/20/31,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,9507600,410400,9097200,9.5
+10/20/31,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,9735600,342000,9393600,9.5
+10/21/31,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,28500000,478800,28044000,9.5
+10/21/31,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,23484000,387600,23142000,9.35
+10/27/31,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,13908000,615600,13338000,9.35
+10/27/31,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,16644000,296400,16302000,9.35
+10/29/31,Yokoyama Lab,Technician C,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,19038000,615600,18468000,9.35
+10/29/31,Yokoyama Lab,Technician C,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,20976000,661200,20292000,9.5
+11/3/31,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,10659000,296400,10362600,9.35
+11/3/31,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,11628000,0,11628000,9.35
+11/20/31,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,18240000,934800,17328000,9.5
+11/20/31,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,19038000,524400,18468000,9.5
+12/2/31,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15196000,116000,15080000,4
+12/2/31,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14616000,0,14616000,4
+1/5/32,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,12198000,638400,11514000,8.6
+1/5/32,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,10773000,490200,10294200,8.6
+1/12/32,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,19152000,843600,18354000,9.5
+1/12/32,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16530000,205200,16302000,9.35
+1/20/32,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12768000,615600,12198000,9.5
+1/20/32,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12768000,661200,12084000,9.35
+1/21/32,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11856000,570000,11308800,9.35
+1/21/32,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16530000,296400,16302000,9.35
+1/26/32,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,7227600,250800,6976800,8.85
+1/26/32,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,5278200,228000,5050200,8.85
+2/2/32,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17784000,638400,17100000,9.35
+2/2/32,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,14250000,364800,13908000,9.1
+2/3/32,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,18354000,843600,17556000,9.5
+2/3/32,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15618000,547200,15048000,9.35
+2/9/32,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12882000,957600,11970000,7.1
+2/9/32,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,7284600,524400,6760200,4.85
+2/17/32,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,18696000,729600,18012000,8.35
+2/17/32,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17328000,661200,16644000,8.35
+2/23/32,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12198000,570000,11628000,9.35
+2/23/32,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,10966800,228000,10738800,9.5
+6/5/32,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9512000,116000,9396000,4
+6/5/32,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10672000,116000,10556000,3.8
+6/9/32,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19372000,20880,19140000,3.9
+6/9/32,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8201200,324800,7876400,3.7
+6/10/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18810000,182400,18582000,3.85
+6/10/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11970000,205200,11742000,3.95
+6/11/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16124000,116000,16008000,3.9
+6/11/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13920000,139200,13804000,3.8
+6/24/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12876000,139200,12760000,3.9
+6/24/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14732000,278400,14500000,3.9
+6/26/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13340000,69600,13224000,3.9
+6/26/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12064000,139200,11948000,3.8
+7/14/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17748000,301600,17400000,4
+7/14/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16356000,46400,16356000,4
+7/24/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15196000,139200,15080000,3.9
+7/24/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13920000,835200,13108000,3.73
+8/4/32,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8120000,23200,8096800,3.8
+8/4/32,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9941200,92800,9848400,4
+8/11/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17168000,0,17168000,4
+8/11/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12644000,46400,12644000,3.4
+8/25/32,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19720000,162400,19604000,4
+8/25/32,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19720000,185600,19488000,4
+9/2/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19380000,159600,19266000,4
+9/2/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19380000,182400,19152000,4
+9/5/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9051600,0,9051600,3.68
+9/5/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8766600,45600,8721000,3.65
+9/8/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9348000,114000,9234000,4
+9/8/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10488000,114000,10374000,3.75
+9/11/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19038000,20520,18810000,3.85
+9/11/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8059800,319200,7740600,3.65
+9/14/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18810000,182400,18582000,3.85
+9/14/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,11970000,205200,11742000,3.95
+9/17/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15846000,114000,15732000,3.85
+9/17/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13680000,136800,13566000,3.75
+9/22/32,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9210400,0,9210400,3.73
+9/22/32,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8920400,46400,8874000,3.7
+9/30/32,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,10869200,232000,10637200,9.4
+9/30/32,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,12876000,162400,12760000,9.15
+10/6/32,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,24940000,580000,24360000,9.4
+10/6/32,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,23432000,603200,22852000,9.4
+10/14/32,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,25288000,765600,24476000,9.5
+10/14/32,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,25984000,1160000,24824000,9.5
+10/20/32,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,9674400,417600,9256800,9.5
+10/20/32,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,9906400,348000,9558400,9.5
+10/21/32,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,29000000,487200,28536000,9.5
+10/21/32,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,23896000,394400,23548000,9.4
+10/27/32,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,14152000,626400,13572000,9.4
+10/27/32,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,16936000,301600,16588000,9.4
+10/29/32,Yokoyama Lab,Technician C,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,19372000,626400,18792000,9.4
+10/29/32,Yokoyama Lab,Technician C,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,21344000,672800,20648000,9.5
+11/3/32,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,10846000,301600,10544400,9.4
+11/3/32,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,11832000,0,11832000,9.4
+11/20/32,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,18560000,951200,17632000,9.5
+11/20/32,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,19372000,533600,18792000,9.5
+12/2/32,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15458000,118000,15340000,4
+12/2/32,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14868000,0,14868000,4
+1/5/33,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,12412000,649600,11716000,8.65
+1/5/33,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,10962000,498800,10474800,8.65
+1/12/33,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,19488000,858400,18676000,9.5
+1/12/33,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16820000,208800,16588000,9.4
+1/20/33,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12992000,626400,12412000,9.5
+1/20/33,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12992000,672800,12296000,9.4
+1/21/33,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12064000,580000,11507200,9.4
+1/21/33,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16820000,301600,16588000,9.4
+1/26/33,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,7354400,255200,7099200,8.9
+1/26/33,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,5370800,232000,5138800,8.9
+2/2/33,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,18096000,649600,17400000,9.4
+2/2/33,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,14500000,371200,14152000,9.15
+2/3/33,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,18676000,858400,17864000,9.5
+2/3/33,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,15892000,556800,15312000,9.4
+2/9/33,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,13108000,974400,12180000,7.15
+2/9/33,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,7412400,533600,6878800,4.9
+2/17/33,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,19024000,742400,18328000,8.4
+2/17/33,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17632000,672800,16936000,8.4
+2/23/33,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12412000,580000,11832000,9.4
+2/23/33,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11159200,232000,10927200,9.5
+6/5/33,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9676000,118000,9558000,4
+6/5/33,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10856000,118000,10738000,3.85
+6/9/33,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19706000,21240,19470000,3.95
+6/9/33,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8342600,330400,8012200,3.75
+6/10/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19140000,185600,18908000,3.9
+6/10/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12180000,208800,11948000,4
+6/11/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16402000,118000,16284000,3.95
+6/11/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14160000,141600,14042000,3.85
+6/24/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13098000,141600,12980000,3.95
+6/24/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14986000,283200,14750000,3.95
+6/26/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13570000,70800,13452000,3.95
+6/26/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12272000,141600,12154000,3.85
+7/14/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,18054000,306800,17700000,4
+7/14/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16638000,47200,16638000,4
+7/24/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,15458000,141600,15340000,3.95
+7/24/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14160000,849600,13334000,3.78
+8/4/33,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8260000,23600,8236400,3.85
+8/4/33,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10112600,94400,10018200,4
+8/11/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,17464000,0,17464000,4
+8/11/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12862000,47200,12862000,3.45
+8/25/33,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,20060000,165200,19942000,4
+8/25/33,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,20060000,188800,19824000,4
+9/2/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19720000,162400,19604000,4
+9/2/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19720000,185600,19488000,4
+9/5/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9210400,0,9210400,3.73
+9/5/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8920400,46400,8874000,3.7
+9/8/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9512000,116000,9396000,4
+9/8/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10672000,116000,10556000,3.8
+9/11/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19372000,20880,19140000,3.9
+9/11/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8201200,324800,7876400,3.7
+9/14/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19140000,185600,18908000,3.9
+9/14/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12180000,208800,11948000,4
+9/17/33,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16124000,116000,16008000,3.9
+9/17/33,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,13920000,139200,13804000,3.8
+9/22/33,Other,Technician C,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9369200,0,9369200,3.78
+9/22/33,Other,Technician C,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9074200,47200,9027000,3.75
+9/30/33,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,11056600,236000,10820600,9.45
+9/30/33,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,13098000,165200,12980000,9.2
+10/6/33,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,25370000,590000,24780000,9.45
+10/6/33,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,23836000,613600,23246000,9.45
+10/14/33,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,25724000,778800,24898000,9.5
+10/14/33,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,26432000,1180000,25252000,9.5
+10/20/33,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,9841200,424800,9416400,9.5
+10/20/33,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,10077200,354000,9723200,9.5
+10/21/33,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,29500000,495600,29028000,9.5
+10/21/33,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,24308000,401200,23954000,9.45
+10/27/33,Yokoyama Lab,Technician C,A,1,PBMC,ACD,1.5,Other Lab Protocol,14396000,637200,13806000,9.45
+10/27/33,Yokoyama Lab,Technician C,B,1,PBMC,ACD,1.5,Other Lab Protocol,17228000,306800,16874000,9.45
+10/29/33,Yokoyama Lab,Technician C,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,19706000,637200,19116000,9.45
+10/29/33,Yokoyama Lab,Technician C,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,21712000,684400,21004000,9.5
+11/3/33,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,11033000,306800,10726200,9.45
+11/3/33,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,12036000,0,12036000,9.45
+11/20/33,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,18880000,967600,17936000,9.5
+11/20/33,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,19706000,542800,19116000,9.5
+1/5/34,Yokoyama Lab,Technician A,A,1,PBMC,Sodium heparin,0,Other Lab Protocol,12626000,660800,11918000,8.7
+1/5/34,Yokoyama Lab,Technician A,B,1,PBMC,Sodium heparin,0,Other Lab Protocol,11151000,507400,10655400,8.7
+1/12/34,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,19824000,873200,18998000,9.5
+1/12/34,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17110000,212400,16874000,9.45
+1/20/34,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,13216000,637200,12626000,9.5
+1/20/34,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,13216000,684400,12508000,9.45
+1/21/34,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12272000,590000,11705600,9.45
+1/21/34,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17110000,306800,16874000,9.45
+1/26/34,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,7481200,259600,7221600,8.95
+1/26/34,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,5463400,236000,5227400,8.95
+2/2/34,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,18408000,660800,17700000,9.45
+2/2/34,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,14750000,377600,14396000,9.2
+2/3/34,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,18998000,873200,18172000,9.5
+2/3/34,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,16166000,566400,15576000,9.45
+2/9/34,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,13334000,991200,12390000,7.2
+2/9/34,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,7540200,542800,6997400,4.95
+2/17/34,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,19352000,755200,18644000,8.45
+2/17/34,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,17936000,684400,17228000,8.45
+2/23/34,Other,Technician A,A,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,12626000,590000,12036000,9.45
+2/23/34,Other,Technician A,B,1,PBMC,Sodium heparin,0,Yokoyama Lab PBMC Isolation Protocol,11351600,236000,11115600,9.5
+6/10/34,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19470000,188800,19234000,3.95
+6/10/34,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12390000,212400,12154000,4
+9/2/34,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,20060000,165200,19942000,4
+9/2/34,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,20060000,188800,19824000,4
+9/5/34,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9369200,0,9369200,3.78
+9/5/34,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9074200,47200,9027000,3.75
+9/8/34,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,9676000,118000,9558000,4
+9/8/34,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,10856000,118000,10738000,3.85
+9/11/34,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19706000,21240,19470000,3.95
+9/11/34,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,8342600,330400,8012200,3.75
+9/14/34,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,19470000,188800,19234000,3.95
+9/14/34,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,12390000,212400,12154000,4
+9/17/34,Other,Technician B,A,1,Fibroblast,Cell culture,0,Cell Culture Protocol,16402000,118000,16284000,3.95
+9/17/34,Other,Technician B,B,1,Fibroblast,Cell culture,0,Cell Culture Protocol,14160000,141600,14042000,3.85
