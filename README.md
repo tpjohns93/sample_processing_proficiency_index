@@ -185,4 +185,4 @@ project_directory
 
 
 ## Responsibilities and Acknowledgements
-Please reach out to Taylor Johnson (taylor.johnson@ucsf.edu) for all questions and inquiries regarding this GitHub repository.
+Please reach out to Taylor Johnson (tpjohns93@gmail.com) for all questions and inquiries regarding this GitHub repository.
