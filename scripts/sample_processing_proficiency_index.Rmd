@@ -1,0 +1,1392 @@
+---
+title: "Sample processig proficiency index"
+author: "Taylor Johnson"
+date: "2026-27-3"
+output: html_document
+runtime: shiny
+---
+
+# 1. Set up
+```{r setup, include=FALSE}
+source("config.R")
+source("check.R")
+source("plot_helpers.R")
+
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+
+pretty_group_label <- function(x) {
+  gsub("_", " ", x, fixed = TRUE)
+}
+```
+
+The validation pipeline covers:
+✅ Required columns exist
+✅ No missing values in required columns
+✅ Required numeric columns contain numeric data
+✅ No invalid negative values (Live ≥ 0, Dead ≥ 0)
+✅ Positive values required for:
+Isolation_event > 0
+Total > 0
+Tube_volume > 0
+
+✅ Live ≤ Total
+✅ Dead ≤ Total
+✅ Live + Dead agrees with Total within the user-defined tolerance (COUNT_TOLERANCE = 2%)
+✅ No duplicate records for the same:
+Date
+Parent_group
+`r DEFAULT_COMPARISON_GROUP`
+Isolation_event
+Replicate
+
+✅ Valid replicate structure:
+Each isolation event contains exactly two technical replicates
+Replicates must be labeled A and B
+Each Date + Parent_group + `r DEFAULT_COMPARISON_GROUP` + Isolation_event combination contains exactly one A and one B
+
+✅ Tube_volume normalization safety:
+Tube_volume > Additive_vol
+Blood_Volume remains positive after correction
+Blood_Volume = Tube_volume - Additive_vol
+
+✅ Row-specific error reporting for all validation failures
+
+```{r}
+# Load your reference dataset from the data directory.
+reference_data <- read.csv(file.path(DATA_DIR, "example_reference_dataset.csv"))
+
+# Validate and standardize the data.
+reference_data <- validate_data(reference_data)
+
+# Make sure the active comparison column exists after validation.
+if (!DEFAULT_COMPARISON_GROUP %in% names(reference_data)) {
+  stop(paste0("Comparison column not found after validation: ", DEFAULT_COMPARISON_GROUP))
+}
+
+comparison_group_values <- sort(unique(as.character(reference_data[[DEFAULT_COMPARISON_GROUP]])))
+comparison_group_label <- DEFAULT_COMPARISON_GROUP
+
+```
+
+# 2. Calculate viability
+
+```{r}
+reference_data$Viability <- reference_data$Live / reference_data$Total
+```
+
+# 3. Normalize cell populations
+
+```{r}
+# Normalize cell counts per mL of estimated whole-blood volume.
+reference_data$Total_norm <- reference_data$Total / reference_data$Blood_Volume
+reference_data$Live_norm  <- reference_data$Live / reference_data$Blood_Volume
+reference_data$Dead_norm  <- reference_data$Dead / reference_data$Blood_Volume
+```
+
+# 4. Calculate proportions
+
+```{r}
+# Proportion dead per total cell count.
+reference_data$`Proportion dead` <- reference_data$Dead / reference_data$Total
+
+# Proportion live per total cell count.
+reference_data$`Proportion live` <- reference_data$Live / reference_data$Total
+```
+
+# 5. Calculate between-sample variability
+## A. Format dataframe
+
+```{r}
+# Align replicate sample (i) cell counts and (ii) proportions in a single row
+# for each unique combination of date, parent group, comparison group, and
+# isolation event.
+reference_data_wider <- reference_data |>
+  dplyr::mutate(
+    Sample_ID = as.character(Sample_ID),
+    Date = parse_reference_date(Date)
+  ) |>
+  tidyr::pivot_wider(
+    id_cols = c(
+      Sample_ID,
+      Date,
+      Parent_group,
+      dplyr::all_of(comparison_group_label),
+      Isolation_event
+    ),
+    names_from = Replicate,
+    values_from = c(Total, Total_norm, Live, Dead, Viability)
+)
+
+comparison_group_values <- sort(unique(as.character(reference_data_wider[[comparison_group_label]])))
+```
+
+## B. Variability calculation
+
+```{r}
+# Viability between replicate samples.
+reference_data_wider$`Inter-sample Viability` <- 1 - abs(
+  reference_data_wider$Viability_A - reference_data_wider$Viability_B
+)
+
+# Cell count agreement between replicate samples.
+reference_data_wider$`Inter-sample Total Count` <- 1 - (
+  abs(reference_data_wider$Total_A - reference_data_wider$Total_B) /
+    ((reference_data_wider$Total_A + reference_data_wider$Total_B) / 2)
+)
+```
+
+## C. Index calculation
+
+```{r}
+# Average calculated quality and consistency metrics for a summarized value
+# indicating isolation efficacy across samples.
+reference_data_wider$`Index` <- (
+  (
+    (reference_data_wider$Viability_A + reference_data_wider$Viability_B) / 2 +
+      (reference_data_wider$`Inter-sample Viability` + reference_data_wider$`Inter-sample Total Count`) / 2
+  ) / 2
+)
+```
+
+## D. Parent-group summary
+
+```{r}
+Parent_group_summary <- reference_data_wider |>
+  dplyr::group_by(Parent_group) |>
+  dplyr::summarise(
+    `Mean Index` = mean(`Index`, na.rm = TRUE),
+    SD = sd(`Index`, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+Parent_group_longitudinal_summary <- reference_data_wider |>
+  dplyr::group_by(Parent_group) |>
+  dplyr::group_modify(~{
+    .x <- dplyr::mutate(.x, Date = parse_reference_date(Date))
+
+    model <- lm(`Index` ~ as.numeric(Date), data = .x)
+
+    data.frame(
+      `Annual Change (%)` = round(coef(model)[2] * 365.25 * 100, 1),
+      `R-squared` = round(summary(model)$r.squared, 2)
+    )
+  })
+```
+
+# 6. Statistical analysis
+## A. Dataset preparation
+
+```{r}
+comparison_group_list <- split(reference_data_wider, reference_data_wider[[comparison_group_label]])
+comparison_group_values <- sort(unique(as.character(reference_data_wider[[comparison_group_label]])))
+comparison_group_pairs <- if (length(comparison_group_values) >= 2) {
+  combn(comparison_group_values, 2, simplify = FALSE)
+} else {
+  list()
+}
+```
+
+## B. Statistical testing
+
+```{r}
+# Automated testing loop comparing two groups for each iteration.
+results_list <- lapply(comparison_group_pairs, function(x) {
+  comparison_1_name <- x[1]
+  comparison_2_name <- x[2]
+  df1 <- comparison_group_list[[comparison_1_name]]
+  df2 <- comparison_group_list[[comparison_2_name]]
+
+  safe_wilcox <- function(a, b) {
+    tryCatch(
+      wilcox.test(a, b, alternative = "two.sided"),
+      error = function(e) NULL
+    )
+  }
+
+  test <- safe_wilcox(df1$`Index`, df2$`Index`)
+  viability_1 <- rowMeans(df1[, c("Viability_A", "Viability_B")], na.rm = TRUE)
+  viability_2 <- rowMeans(df2[, c("Viability_A", "Viability_B")], na.rm = TRUE)
+  viability_test <- safe_wilcox(viability_1, viability_2)
+  inter_sample_viability_test <- safe_wilcox(df1$`Inter-sample Viability`, df2$`Inter-sample Viability`)
+  inter_sample_total_test <- safe_wilcox(df1$`Inter-sample Total Count`, df2$`Inter-sample Total Count`)
+
+  data.frame(
+    Comparison = paste(comparison_1_name, "vs", comparison_2_name),
+    metric = c("Index", "Mean Viability", "Inter-sample Viability", "Inter-sample Total"),
+    stat = c(
+      if (!is.null(test)) unname(test$statistic) else NA_real_,
+      if (!is.null(viability_test)) unname(viability_test$statistic) else NA_real_,
+      if (!is.null(inter_sample_viability_test)) unname(inter_sample_viability_test$statistic) else NA_real_,
+      if (!is.null(inter_sample_total_test)) unname(inter_sample_total_test$statistic) else NA_real_
+    ),
+    p.value = c(
+      if (!is.null(test)) test$p.value else NA_real_,
+      if (!is.null(viability_test)) viability_test$p.value else NA_real_,
+      if (!is.null(inter_sample_viability_test)) inter_sample_viability_test$p.value else NA_real_,
+      if (!is.null(inter_sample_total_test)) inter_sample_total_test$p.value else NA_real_
+    )
+  )
+})
+
+if (length(results_list) > 0) {
+  final_stats <- do.call(rbind, results_list)
+  final_stats$p.adj <- p.adjust(final_stats$p.value, method = "BH")
+} else {
+  final_stats <- data.frame()
+}
+
+# Save reference data.
+saveRDS(reference_data_wider, file.path(OUTPUT_DIR, "Index_data.rds"))
+# Backward-compatible alias while you transition downstream scripts.
+saveRDS(reference_data_wider, file.path(OUTPUT_DIR, "Index_data.rds"))
+
+comparison_group_summary_levels <- comparison_group_values
+
+comparison_group_summary_rows <- lapply(comparison_group_summary_levels, function(group_name) {
+  
+comparison_data <- reference_data_wider |>
+  dplyr::filter(.data[[comparison_group_label]] == group_name) |>
+  dplyr::mutate(Date = parse_reference_date(Date))
+
+other_data <- reference_data_wider |>
+  dplyr::filter(.data[[comparison_group_label]] != group_name)
+
+  comparison_p <- tryCatch(
+    wilcox.test(
+      comparison_data$`Index`,
+      other_data$`Index`
+    )$p.value,
+    error = function(e) NA_real_
+  )
+
+  annual_change <- NA_real_
+  if (nrow(comparison_data) >= 2 && sum(!is.na(comparison_data$Date)) >= 2) {
+    trend_model <- lm(`Index` ~ as.numeric(Date), data = comparison_data)
+    annual_change <- round(coef(trend_model)[2] * 365.25 * 100, 1)
+  }
+
+  primary_driver <- "None"
+  if (!is.na(comparison_p) && comparison_p < 0.05) {
+    viability_p <- tryCatch(
+      wilcox.test(
+reference_data$Viability[reference_data[[comparison_group_label]] == group_name],
+reference_data$Viability[reference_data[[comparison_group_label]] != group_name]
+)$p.value,
+      error = function(e) NA_real_
+    )
+
+    inter_viability_p <- tryCatch(
+      wilcox.test(
+        comparison_data$`Inter-sample Viability`,
+        other_data$`Inter-sample Viability`
+      )$p.value,
+      error = function(e) NA_real_
+    )
+
+    inter_total_p <- tryCatch(
+      wilcox.test(
+        comparison_data$`Inter-sample Total Count`,
+        other_data$`Inter-sample Total Count`
+      )$p.value,
+      error = function(e) NA_real_
+    )
+
+    component_p <- c(
+      "Viability" = viability_p,
+      "Inter-sample Viability" = inter_viability_p,
+      "Inter-sample Total Count" = inter_total_p
+    )
+
+    component_p <- component_p[!is.na(component_p) & component_p < 0.05]
+
+    if (length(component_p) > 0) {
+      primary_driver <- paste(names(component_p), collapse = "; ")
+    }
+  }
+
+  data.frame(
+    comparison_group = group_name,
+    `Mean Index` = round(mean(comparison_data$`Index`, na.rm = TRUE), 3),
+    `SD` = round(sd(comparison_data$`Index`, na.rm = TRUE), 3),
+    `Annual Change (%)` = annual_change,
+    `comparison group vs repository p-value` = sprintf("%.3f", comparison_p),
+    `Significant Variable Driving Difference` = primary_driver,
+    check.names = FALSE
+  )
+})
+
+comparison_group_summary <- dplyr::bind_rows(comparison_group_summary_rows)
+
+# Repository-level summary.
+repository_data <- reference_data_wider |>
+  dplyr::mutate(Date = parse_reference_date(Date))
+
+repository_model <- lm(
+  `Index` ~ as.numeric(Date),
+  data = repository_data
+)
+
+repository_summary <- data.frame(
+  `Mean Index` = round(mean(repository_data$`Index`, na.rm = TRUE), 3),
+  `SD` = round(sd(repository_data$`Index`, na.rm = TRUE), 3),
+  `Number of Paired Isolations` = nrow(repository_data),
+  `Annual Change (%)` = round(coef(repository_model)[2] * 365.25 * 100, 1),
+  `R-squared` = round(summary(repository_model)$r.squared, 2),
+  check.names = FALSE
+)
+```
+
+# 7. Reference dataset - Shiny app visualization
+## A. Define UI
+
+```{r}
+## A. Define UI
+
+ui <- fluidPage(
+  theme = app_theme,
+
+  titlePanel(
+    div(
+      "Sample Processing Proficiency Index (SPPI) Dashboard",
+      style = "font-weight:600; font-size:28px;"
+    )
+  ),
+
+  br(),
+
+  wellPanel(
+    h4("Reference Dataset"),
+
+    div(
+      style = "max-width:300px;",
+      fileInput(
+        "reference_file",
+        tags$strong("1. Upload CSV"),
+        accept = ".csv",
+        width = "100%"
+      )
+    ),
+
+    div(
+      style = "max-width:300px;",
+      selectInput(
+        "comparison_group",
+        tags$strong("2. Compare by"),
+        choices = setNames(
+          c(
+            "Technician",
+            "Parent_group",
+            "Cell_type",
+            "Tube_type",
+            "Protocol"
+          ),
+          pretty_group_label(
+            c(
+              "Technician",
+              "Parent_group",
+              "Cell_type",
+              "Tube_type",
+              "Protocol"
+            )
+          )
+        ),
+        selected = DEFAULT_COMPARISON_GROUP,
+        width = "100%"
+      )
+    ),
+
+    div(
+      style = "max-width:300px;",
+      tags$strong("3. Generate Reference Statistics"),
+      br(),
+      br(),
+      actionButton(
+        "build_reference",
+        "Generate",
+        class = "btn-primary",
+        width = "100%"
+      )
+    ),
+
+    br(),
+
+    actionLink(
+      "use_example_link",
+      "Use example dataset"
+    ),
+
+    br(),
+    br()
+  ),
+
+  navset_card_tab(
+    nav_panel(
+      "SPPI",
+
+      wellPanel(
+        h4("Interpretation"),
+        p("The Sample Processing Proficiency Index (SPPI) incorporates isolation quality and consistency between replicate samples. Higher Indexs indicate better overall processing performance."),
+      plotOutput("Index_plot", height = "70vh")
+    )),
+
+    nav_panel(
+      "Longitudinal SPPI",
+
+      navset_card_tab(
+        nav_panel(
+          "Comparison Group View",
+
+          wellPanel(
+            h4("Interpretation"),
+            p("This view tracks Sample Processing Proficiency Index (SPPI) longitudinally for each selected comparison group."),
+            tags$ul(
+              tags$li("Positive annual change suggests improving sample processing performance."),
+              tags$li("Negative annual change suggests declining sample processing performance."),
+              tags$li("Lower p-values suggest the comparison group significantly differs from the repository.")
+            )
+          ),
+
+          plotOutput("time_plot", height = "60vh"),
+          br(),
+          tableOutput("comparison_group_summary")
+        ),
+
+        nav_panel(
+          "Repository View",
+
+          wellPanel(
+            h4("Interpretation"),
+            p("This view tracks Sample Processing Proficiency Index (SPPI) longitudinally at the repository level, independent of the comparison group."),
+            tags$ul(
+              tags$li("Positive annual change suggests improving sample processing performance."),
+              tags$li("Negative annual change suggests declining sample processing performance.")
+            )
+          ),
+
+          plotOutput("repository_time_plot", height = "60vh"),
+          br(),
+          tableOutput("repository_summary")
+        )
+      )
+    ),
+
+    nav_panel(
+      "Component Metrics",
+
+      navset_card_tab(
+        nav_panel(
+          "Viability",
+
+          wellPanel(
+            h4("Interpretation"),
+            p("The Sample Processing Proficiency Index (SPPI) quality component is captured by viability - the proportion of recovered, live cells.")
+          ),
+
+          plotOutput("viability_plot", height = "90vh")
+        ),
+
+        nav_panel(
+          "Inter-sample Variability",
+
+          wellPanel(
+            h4("Interpretation"),
+            p("The Sample Processing Proficiency Index (SPPI) consistency component is captured by an inter-tube viability and total cell count composite."),
+            tags$ul(
+              tags$li("Higher values indicate better metric agreement between replicate samples."),
+              tags$li("Lower values suggest increased variability between replicate samples during processing.")
+            )
+          ),
+
+          selectInput(
+            "inter_type",
+            "Variability Metric",
+            choices = c(
+              "Viability" = "Inter-sample Viability",
+              "Total Count" = "Inter-sample Total Count"
+            ),
+            selected = "Inter-sample Viability"
+          ),
+
+          plotOutput("inter_variability_combined_plot", height = "70vh")
+        )
+      )
+    ),
+
+    nav_panel(
+      "Benchmarking Assessment",
+
+      fluidRow(
+        column(
+          5,
+          wellPanel(
+            h4("Inputs"),
+
+            numericInput(
+              "new_tube_volume_A",
+              "Tube A tube volume (mL)",
+              value = 0,
+              min = 0,
+              step = 0.1
+            ),
+            numericInput(
+              "new_tube_volume_B",
+              "Tube B tube volume (mL)",
+              value = 0,
+              min = 0,
+              step = 0.1
+            ),
+            numericInput(
+              "new_additive_vol",
+              "Additive vol (mL)",
+              value = 0,
+              min = 0,
+              step = 0.1
+            ),
+            numericInput(
+              "new_total_A",
+              "Tube A total count",
+              value = 0,
+              min = 0,
+              step = 1
+            ),
+            numericInput(
+              "new_total_B",
+              "Tube B total count",
+              value = 0,
+              min = 0,
+              step = 1
+            ),
+            numericInput(
+              "new_live_A",
+              "Tube A live count",
+              value = 0,
+              min = 0,
+              step = 1
+            ),
+            numericInput(
+              "new_live_B",
+              "Tube B live count",
+              value = 0,
+              min = 0,
+              step = 1
+            ),
+
+            actionButton(
+              "go_benchmarking_assessment",
+              "Calculate Benchmarking Assessment SPPI",
+              class = "btn-primary",
+              width = "100%"
+            )
+          )
+        ),
+
+        column(
+          7,
+          wellPanel(
+            h4("Interpretation"),
+            p("This Sample Processing Proficiency Index (SPPI) benchmark compares a single paired isolation event to the loaded reference dataset Higher SPPI indicates better overall processing performance.")
+          ),
+
+          plotOutput("benchmarking_assessment_Index_plot", height = "48vh"),
+          br(),
+          
+fluidRow(
+  column(
+    width = 6,
+    wellPanel(
+      h4("Loaded Reference Statistics"),
+      tableOutput("benchmarking_reference")
+    )
+  ),
+  column(
+    width = 6,
+    wellPanel(
+      h4("Benchmarked Statistics"),
+      tableOutput("benchmarking_assessment_summary")
+    )
+  )
+),          
+          br(),
+          
+          textOutput("benchmarking_assessment_Index_note")
+        )
+      )
+    )
+  )
+)
+
+```
+
+## B. Define server
+```{r}
+
+server <- function(input, output, session) {
+
+  data_source_mode <- reactiveVal("upload")
+
+  observeEvent(input$comparison_group, {
+    DEFAULT_COMPARISON_GROUP <<- input$comparison_group
+  }, ignoreInit = FALSE)
+
+  active_group_label <- reactive({
+    req(input$comparison_group)
+    input$comparison_group
+  })
+
+  reference_raw <- reactive({
+    if (identical(data_source_mode(), "example")) {
+      read.csv(
+        file.path(DATA_DIR, "example_reference_dataset.csv"),
+        stringsAsFactors = FALSE,
+        check.names = FALSE
+      )
+    } else {
+      req(input$reference_file)
+      read.csv(
+        input$reference_file$datapath,
+        stringsAsFactors = FALSE,
+        check.names = FALSE
+      )
+    }
+  })
+
+  reference_data <- reactive({
+    df <- reference_raw()
+    df <- validate_data(df)
+
+    df$Viability <- df$Live / df$Total
+    df$Total_norm <- df$Total / df$Blood_Volume
+    df$Live_norm  <- df$Live / df$Blood_Volume
+    df$Dead_norm  <- df$Dead / df$Blood_Volume
+    df$`Proportion dead` <- df$Dead / df$Total
+    df$`Proportion live` <- df$Live / df$Total
+
+    df
+  })
+
+  reference_data_wider <- reactive({
+    df <- reference_data()
+    group_col <- active_group_label()
+
+    wider <- df |>
+      dplyr::mutate(
+        Date = parse_reference_date(Date)
+      ) |>
+      tidyr::pivot_wider(
+        id_cols = c(
+          Date,
+          Parent_group,
+          dplyr::all_of(group_col),
+          Isolation_event
+        ),
+        names_from = Replicate,
+        values_from = c(Total, Total_norm, Live, Dead, Viability)
+      )
+
+    wider$`Inter-sample Viability` <- 1 - abs(
+      wider$Viability_A - wider$Viability_B
+    )
+
+    wider$`Inter-sample Total Count` <- 1 - (
+      abs(wider$Total_norm_A - wider$Total_norm_B) /
+        ((wider$Total_norm_A + wider$Total_norm_B) / 2)
+    )
+
+    wider$Index <- (
+      (
+        (wider$Viability_A + wider$Viability_B) / 2 +
+          (
+            wider$`Inter-sample Viability` +
+              wider$`Inter-sample Total Count`
+          ) / 2
+      ) / 2
+    )
+
+    wider
+  })
+
+  comparison_group_values <- reactive({
+    group_col <- active_group_label()
+    vals <- unique(as.character(reference_data_wider()[[group_col]]))
+    sort(vals)
+  })
+
+  comparison_group_pairs <- reactive({
+    vals <- comparison_group_values()
+    if (length(vals) >= 2) {
+      combn(vals, 2, simplify = FALSE)
+    } else {
+      list()
+    }
+  })
+
+  comparison_group_summary <- reactive({
+    df <- reference_data_wider() |>
+      dplyr::mutate(Date = parse_reference_date(Date))
+
+    group_col <- active_group_label()
+    groups <- sort(unique(as.character(df[[group_col]])))
+
+    if (length(groups) == 0) {
+      return(data.frame())
+    }
+
+    rows <- lapply(groups, function(group_name) {
+      group_data <- df |>
+        dplyr::filter(.data[[group_col]] == group_name)
+
+      repo_data <- df |>
+        dplyr::filter(.data[[group_col]] != group_name)
+
+      comparison_p <- tryCatch(
+        wilcox.test(group_data$Index, repo_data$Index)$p.value,
+        error = function(e) NA_real_
+      )
+
+      annual_change <- NA_real_
+      if (nrow(group_data) >= 2 && sum(!is.na(group_data$Date)) >= 2) {
+        trend_model <- lm(Index ~ as.numeric(Date), data = group_data)
+        annual_change <- round(coef(trend_model)[2] * 365.25 * 100, 1)
+      }
+
+      primary_driver <- "None"
+
+      if (!is.na(comparison_p) && comparison_p < 0.05) {
+        viability_p <- tryCatch(
+          wilcox.test(group_data$Viability_A, repo_data$Viability_A)$p.value,
+          error = function(e) NA_real_
+        )
+
+        inter_viability_p <- tryCatch(
+          wilcox.test(
+            group_data$`Inter-sample Viability`,
+            repo_data$`Inter-sample Viability`
+          )$p.value,
+          error = function(e) NA_real_
+        )
+
+        inter_total_p <- tryCatch(
+          wilcox.test(
+            group_data$`Inter-sample Total Count`,
+            repo_data$`Inter-sample Total Count`
+          )$p.value,
+          error = function(e) NA_real_
+        )
+
+        sig_components <- c(
+          "Viability" = viability_p,
+          "Inter-sample Viability" = inter_viability_p,
+          "Inter-sample Total Count" = inter_total_p
+        )
+
+        sig_components <- sig_components[
+          !is.na(sig_components) & sig_components < 0.05
+        ]
+
+        if (length(sig_components) > 0) {
+          primary_driver <- paste(names(sig_components), collapse = "; ")
+        }
+      }
+
+data.frame(
+  `Comparison group` = group_name,
+  `N` = nrow(group_data),
+  `Mean Index` = round(mean(group_data$Index, na.rm = TRUE), 3),
+  `SD` = round(sd(group_data$Index, na.rm = TRUE), 3),
+  `Annual Change (%)` = annual_change,
+  `Comparison group vs repository p-value` = sprintf("%.3f", comparison_p),
+  `Significant Variable Driving Difference` = primary_driver,
+  check.names = FALSE
+)
+          })
+
+    dplyr::bind_rows(rows)
+  })
+
+  repository_summary <- reactive({
+    df <- reference_data_wider() |>
+      dplyr::mutate(Date = parse_reference_date(Date))
+
+    repository_model <- tryCatch(
+      lm(Index ~ as.numeric(Date), data = df),
+      error = function(e) NULL
+    )
+
+    annual_change <- NA_real_
+    r_squared <- NA_real_
+
+    if (!is.null(repository_model)) {
+      annual_change <- round(coef(repository_model)[2] * 365.25 * 100, 1)
+      r_squared <- round(summary(repository_model)$r.squared, 2)
+    }
+
+    data.frame(
+      `Mean Index` = round(mean(df$Index, na.rm = TRUE), 3),
+      `SD` = round(sd(df$Index, na.rm = TRUE), 3),
+      `Number of Paired Isolations` = nrow(df),
+      `Annual Change (%)` = annual_change,
+      `R-squared` = r_squared,
+      check.names = FALSE
+    )
+  })
+
+  reference_statistics <- reactive({
+    list(
+      Index = list(
+        mean = mean(reference_data_wider()$Index, na.rm = TRUE),
+        sd = sd(reference_data_wider()$Index, na.rm = TRUE),
+        median = median(reference_data_wider()$Index, na.rm = TRUE),
+        q25 = unname(quantile(reference_data_wider()$Index, 0.25, na.rm = TRUE)),
+        q75 = unname(quantile(reference_data_wider()$Index, 0.75, na.rm = TRUE))
+      ),
+      viability = list(
+        mean = mean(reference_data()$Viability, na.rm = TRUE),
+        sd = sd(reference_data()$Viability, na.rm = TRUE),
+        median = median(reference_data()$Viability, na.rm = TRUE)
+      ),
+      inter_sample_viability = list(
+        mean = mean(reference_data_wider()$`Inter-sample Viability`, na.rm = TRUE),
+        sd = sd(reference_data_wider()$`Inter-sample Viability`, na.rm = TRUE)
+      ),
+      inter_sample_total = list(
+        mean = mean(reference_data_wider()$`Inter-sample Total Count`, na.rm = TRUE),
+        sd = sd(reference_data_wider()$`Inter-sample Total Count`, na.rm = TRUE)
+      ),
+      comparison_group_summary = comparison_group_summary(),
+      repository_summary = repository_summary()
+    )
+  })
+
+  reference_source_label <- reactive({
+    if (identical(data_source_mode(), "example")) {
+      "default example reference dataset"
+    } else {
+      "user-uploaded reference dataset"
+    }
+  })
+
+  observeEvent(input$use_example_link, {
+    data_source_mode("example")
+  })
+
+  observeEvent(input$reference_file, {
+    data_source_mode("upload")
+  })
+
+benchmarking_assessment_metrics <- eventReactive(input$go_benchmarking_assessment, {
+
+  validate(
+    need(
+      input$new_total_A > 0 && input$new_total_B > 0,
+      "Total counts must be greater than zero."
+    ),
+    need(
+      input$new_live_A >= 0 && input$new_live_B >= 0,
+      "Live counts cannot be negative."
+    ),
+    need(
+      input$new_live_A <= input$new_total_A &&
+        input$new_live_B <= input$new_total_B,
+      "Live count cannot exceed total count."
+    ),
+    need(
+      input$new_tube_volume_A > input$new_additive_vol &&
+        input$new_tube_volume_B > input$new_additive_vol,
+      "Tube volume must be greater than Additive vol."
+    )
+  )
+
+  blood_vol_A <- as.numeric(input$new_tube_volume_A - input$new_additive_vol)
+  blood_vol_B <- as.numeric(input$new_tube_volume_B - input$new_additive_vol)
+
+  viab_A <- as.numeric(input$new_live_A / input$new_total_A)
+  viab_B <- as.numeric(input$new_live_B / input$new_total_B)
+
+  total_norm_A <- as.numeric(input$new_total_A / blood_vol_A)
+  total_norm_B <- as.numeric(input$new_total_B / blood_vol_B)
+
+  inter_viab <- as.numeric(1 - abs(viab_A - viab_B))
+  inter_total <- as.numeric(
+    1 - abs(total_norm_A - total_norm_B) / mean(c(total_norm_A, total_norm_B))
+  )
+
+  sppi <- as.numeric(
+    (((viab_A + viab_B) / 2) + ((inter_viab + inter_total) / 2)) / 2
+  )
+
+  list(
+    tube_volume_A = as.numeric(input$new_tube_volume_A),
+    tube_volume_B = as.numeric(input$new_tube_volume_B),
+    additive_vol = as.numeric(input$new_additive_vol),
+    blood_volume_A = blood_vol_A,
+    blood_volume_B = blood_vol_B,
+    total_A = as.numeric(input$new_total_A),
+    total_B = as.numeric(input$new_total_B),
+    live_A = as.numeric(input$new_live_A),
+    live_B = as.numeric(input$new_live_B),
+    viability_A = viab_A,
+    viability_B = viab_B,
+    total_norm_A = total_norm_A,
+    total_norm_B = total_norm_B,
+    inter_viability = inter_viab,
+    inter_total = inter_total,
+    Index = sppi
+  )
+})
+
+benchmarking_assessment_reference_stats <- reactive({
+  Indexs <- as.numeric(reference_data_wider()$Index)
+
+  list(
+    mean = mean(Indexs, na.rm = TRUE),
+    sd = sd(Indexs, na.rm = TRUE),
+    median = median(Indexs, na.rm = TRUE),
+    q25 = unname(quantile(Indexs, 0.25, na.rm = TRUE)),
+    q75 = unname(quantile(Indexs, 0.75, na.rm = TRUE))
+  )
+})
+
+benchmarking_assessment_percentile <- reactive({
+  df <- reference_data_wider()
+  user_Index <- as.numeric(benchmarking_assessment_metrics()$Index)
+  as.numeric(mean(as.numeric(df$Index) <= user_Index, na.rm = TRUE) * 100)
+})
+
+
+
+output$benchmarking_assessment_Index_note <- renderText({
+  paste0(
+    "Benchmark source: ", reference_source_label(), ". "
+  )
+})
+
+  benchmarking_assessment_reference_stats <- reactive({
+    Indexs <- reference_data_wider()$Index
+
+    list(
+      mean = mean(Indexs, na.rm = TRUE),
+      sd = sd(Indexs, na.rm = TRUE),
+      median = median(Indexs, na.rm = TRUE),
+      q25 = quantile(Indexs, 0.25, na.rm = TRUE),
+      q75 = quantile(Indexs, 0.75, na.rm = TRUE)
+    )
+  })
+
+  benchmarking_assessment_percentile <- reactive({
+    df <- reference_data_wider()
+    Index <- benchmarking_assessment_metrics()$Index
+    mean(df$Index <= Index, na.rm = TRUE) * 100
+  })
+
+  output$benchmarking_assessment_Index_plot <- renderPlot({
+    metrics <- benchmarking_assessment_metrics()
+    req(metrics)
+
+    df <- reference_data_wider()
+    req(nrow(df) > 0)
+
+    user_Index <- metrics$Index
+    user_pct <- benchmarking_assessment_percentile()
+    ref_stats <- benchmarking_assessment_reference_stats()
+
+    ggplot2::ggplot(df, ggplot2::aes(x = "", y = Index)) +
+      ggplot2::geom_violin(
+        fill = COLORS$primary,
+        alpha = 0.20,
+        color = "white",
+        linewidth = 0.8
+      ) +
+      ggplot2::geom_jitter(
+        width = 0.08,
+        alpha = 0.50,
+        size = 2.5,
+        color = "white"
+      ) +
+      ggplot2::geom_hline(
+        yintercept = user_Index,
+        linetype = "dashed",
+        linewidth = 1.1,
+        color = COLORS$accent_red
+      ) +
+      ggplot2::annotate(
+        "label",
+        x = 1,
+        y = user_Index,
+        label = paste0("Benchmarked SPPI = ", round(user_Index, 3)),
+        fill = COLORS$accent_red,
+        color = "white",
+        fontface = "bold",
+        size = 5
+      ) +
+      ggplot2::labs(
+        title = "SPPI Benchmarking Assessment",
+        subtitle = paste0(
+          "Reference source: ", reference_source_label(), " | ",
+          "Percentile vs reference: ", round(user_pct, 1), "% | ",
+          "Reference mean: ", round(ref_stats$mean, 3)
+        ),
+        x = NULL,
+        y = "SPPI"
+      ) +
+      custom_theme +
+      ggplot2::theme(
+        axis.text.x = ggplot2::element_blank(),
+        axis.ticks.x = ggplot2::element_blank()
+      )
+  }, bg = COLORS$bg_dark)
+```
+
+```{r}
+
+output$benchmarking_reference <- renderTable({
+  metrics <- benchmarking_assessment_metrics()
+  req(metrics)
+
+  stats <- benchmarking_assessment_reference_stats()
+
+  data.frame(
+    Metric = c(
+      "Reference SPPI mean",
+      "Reference SPPI SD",
+      "Reference SPPI median"
+    ),
+    Value = c(
+      sprintf("%.3f", stats$mean),
+      sprintf("%.3f", stats$sd),
+      sprintf("%.3f", stats$median)
+    ),
+    check.names = FALSE
+  )
+}, striped = TRUE, bordered = TRUE, spacing = "s")
+
+
+  output$benchmarking_assessment_summary <- renderTable({
+    metrics <- benchmarking_assessment_metrics()
+    req(metrics)
+    stats <- benchmarking_assessment_reference_stats()
+    user_pct <- benchmarking_assessment_percentile()
+    data.frame(
+      Metric = c(
+        "Benchmarked SPPI",
+        "Benchmarked percentile",
+        "Tube A viability",
+        "Tube B viability",
+        "Inter-sample viability",
+        "Inter-sample total agreement"
+      ),
+      Value = c(
+        sprintf("%.3f", metrics$Index),
+        sprintf("%.1f%%", user_pct),
+        sprintf("%.3f", metrics$viability_A),
+        sprintf("%.3f", metrics$viability_B),
+        sprintf("%.3f", metrics$inter_viability),
+        sprintf("%.3f", metrics$inter_total)
+      ),
+      check.names = FALSE
+    )
+  }, striped = TRUE, bordered = TRUE, spacing = "s")
+
+
+```
+
+```{r}
+  output$benchmarking_assessment_Index_note <- renderText({
+    paste0(
+      "Benchmark source: ", reference_source_label(), ". "
+    )
+  })
+
+  observeEvent(input$build_reference, {
+    req(reference_data_wider())
+
+    saveRDS(
+      reference_data_wider(),
+      file = file.path(OUTPUT_DIR, "reference_index_data.rds")
+    )
+
+    saveRDS(
+      reference_statistics(),
+      file = file.path(OUTPUT_DIR, "reference_statistics.rds")
+    )
+
+    showNotification(
+      "Reference Rds files saved to the output directory.",
+      type = "message"
+    )
+  })
+
+  output$Index_plot <- renderPlot({
+    req(length(comparison_group_values()) >= 2)
+
+    p <- betweenstats(
+      data = reference_data_wider(),
+      x = active_group_label(),
+      y = "Index",
+      type = "nonparametric",
+      results.subtitle = TRUE,
+      display.stats = TRUE
+    ) +
+      ggplot2::labs(
+        x = pretty_group_label(active_group_label()),
+        title = paste("SPPI by", pretty_group_label(active_group_label())),
+        subtitle = "Each point represents one paired isolation event"
+      )
+
+    if (length(comparison_group_values()) == 2) {
+      p_value <- wilcox.test(
+        reference_data_wider()$Index[
+          reference_data_wider()[[active_group_label()]] == comparison_group_values()[1]
+        ],
+        reference_data_wider()$Index[
+          reference_data_wider()[[active_group_label()]] == comparison_group_values()[2]
+        ]
+      )$p.value
+
+      p <- p +
+        ggsignif::geom_signif(
+          comparisons = list(comparison_group_values()),
+          annotations = format_p_label(p_value),
+          color = COLORS$primary,
+          textsize = 5
+        )
+    }
+
+    p 
+    }, bg = "#222222")
+
+  output$viability_plot <- renderPlot({
+    req(length(comparison_group_values()) >= 2)
+
+    p <- betweenstats(
+      data = reference_data(),
+      x = active_group_label(),
+      y = "Viability",
+      type = "nonparametric",
+      results.subtitle = TRUE,
+      display.stats = TRUE
+    ) +
+      ggplot2::labs(
+        x = pretty_group_label(active_group_label()),
+        title = paste("Viability by", pretty_group_label(active_group_label())),
+        subtitle = "Each point represents one paired isolation event"
+      )
+
+    if (length(comparison_group_values()) == 2) {
+      p_value <- wilcox.test(
+        reference_data()$Viability[
+          reference_data()[[active_group_label()]] == comparison_group_values()[1]
+        ],
+        reference_data()$Viability[
+          reference_data()[[active_group_label()]] == comparison_group_values()[2]
+        ]
+      )$p.value
+
+      p <- p +
+        ggsignif::geom_signif(
+          comparisons = list(comparison_group_values()),
+          annotations = format_p_label(p_value),
+          color = COLORS$primary,
+          textsize = 5
+        )
+    }
+
+    p 
+  }, bg = "#222222")
+
+  output$inter_variability_combined_plot <- renderPlot({
+    req(input$inter_type)
+    req(length(comparison_group_values()) >= 2)
+
+    p <- betweenstats(
+      data = reference_data_wider(),
+      x = active_group_label(),
+      y = input$inter_type,
+      type = "nonparametric",
+      results.subtitle = TRUE,
+      display.stats = TRUE,
+      y_label = input$inter_type
+    ) +
+      ggplot2::labs(
+        x = pretty_group_label(active_group_label()),
+        title = paste("SPPI by", pretty_group_label(active_group_label())),
+        subtitle = "Each point represents one paired isolation event"
+      )
+
+    if (length(comparison_group_values()) == 2) {
+      metric_vals <- reference_data_wider()[[input$inter_type]]
+
+      p_value <- wilcox.test(
+        metric_vals[
+          reference_data_wider()[[active_group_label()]] == comparison_group_values()[1]
+        ],
+        metric_vals[
+          reference_data_wider()[[active_group_label()]] == comparison_group_values()[2]
+        ]
+      )$p.value
+
+      p <- p +
+        ggsignif::geom_signif(
+          comparisons = list(comparison_group_values()),
+          annotations = format_p_label(p_value),
+          color = COLORS$primary,
+          textsize = 5
+        )
+    }
+
+    p
+  }, bg = "#222222")
+
+  output$time_plot <- renderPlot({
+    time_data <- reference_data_wider() |>
+      dplyr::mutate(Date = parse_reference_date(Date)) |>
+      dplyr::filter(
+        !is.na(Date),
+        !is.na(.data[["Index"]])
+      )
+
+    ggplot2::ggplot(
+      time_data,
+      ggplot2::aes(
+        x = Date,
+        y = .data[["Index"]],
+        color = .data[[active_group_label()]]
+      )
+    ) +
+      ggplot2::geom_point(size = 3, alpha = 0.8) +
+      ggplot2::geom_smooth(
+        ggplot2::aes(group = .data[[active_group_label()]]),
+        method = "lm",
+        se = FALSE,
+        linewidth = 0.9
+      ) +
+      ggplot2::scale_y_continuous(
+        limits = c(0.75, 1),
+        breaks = seq(0.75, 1, by = 0.05)
+      ) +
+      adaptive_date_scale(time_data$Date) +
+      ggplot2::labs(
+        title = paste("Longitudinal SPPI by", pretty_group_label(active_group_label())),
+        subtitle = paste0(
+          "Each point represents one paired isolation event; lines show ",
+          active_group_label(),
+          "-level linear trends"
+        ),
+        x = "Date",
+        y = "Index",
+        color = active_group_label()
+      ) +
+      custom_theme +
+      ggplot2::theme(
+        axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)
+      )
+  }, bg = "#222222")
+
+  output$repository_time_plot <- renderPlot({
+    repository_data <- reference_data_wider() |>
+      dplyr::mutate(Date = parse_reference_date(Date))
+
+    ggplot2::ggplot(
+      repository_data,
+      ggplot2::aes(
+        x = Date,
+        y = Index
+      )
+    ) +
+      ggplot2::geom_point(
+        size = 3,
+        alpha = 0.8,
+        color = COLORS$primary
+      ) +
+      ggplot2::geom_smooth(
+        method = "lm",
+        se = FALSE,
+        linewidth = 0.9,
+        color = "white"
+      ) +
+      ggplot2::scale_y_continuous(
+        limits = c(0.75, 1),
+        breaks = seq(0.75, 1, by = 0.05)
+      ) +
+      adaptive_date_scale(repository_data$Date) +
+      ggplot2::labs(
+        title = paste("Longitudinal repository SPPI by", pretty_group_label(active_group_label())),
+        subtitle = "Each point represents one paired isolation event; lines show repository-level linear trends",
+        x = "Date",
+        y = "Index"
+      ) +
+      custom_theme +
+      ggplot2::theme(
+        axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)
+      )
+  }, bg = "#222222")
+
+  output$comparison_group_summary <- renderTable({
+    comparison_group_summary()
+  }, striped = TRUE, bordered = TRUE, spacing = "s")
+
+  output$repository_summary <- renderTable({
+    repository_summary()
+  }, striped = TRUE, bordered = TRUE, spacing = "s")
+}
+
+```
+
+# 8. Save reference statistics
+
+```{r}
+reference_statistics <- list(
+
+  Index = list(
+    mean = mean(reference_data_wider$`Index`, na.rm = TRUE),
+    sd = sd(reference_data_wider$`Index`, na.rm = TRUE),
+    median = median(reference_data_wider$`Index`, na.rm = TRUE),
+    q25 = quantile(reference_data_wider$`Index`, 0.25, na.rm = TRUE),
+    q75 = quantile(reference_data_wider$`Index`, 0.75, na.rm = TRUE)
+  ),
+
+  viability = list(
+    mean = mean(reference_data$Viability, na.rm = TRUE),
+    sd = sd(reference_data$Viability, na.rm = TRUE),
+    median = median(reference_data$Viability, na.rm = TRUE)
+  ),
+
+  inter_sample_viability = list(
+    mean = mean(reference_data_wider$`Inter-sample Viability`, na.rm = TRUE),
+    sd = sd(reference_data_wider$`Inter-sample Viability`, na.rm = TRUE)
+  ),
+
+  inter_sample_total = list(
+    mean = mean(reference_data_wider$`Inter-sample Total Count`, na.rm = TRUE),
+    sd = sd(reference_data_wider$`Inter-sample Total Count`, na.rm = TRUE)
+  )
+
+)
+
+saveRDS(
+  reference_statistics,
+  file.path(
+    OUTPUT_DIR,
+    "reference_statistics.rds"
+  )
+)
+
+saveRDS(
+  comparison_group_summary,
+  file.path(
+    OUTPUT_DIR,
+    "comparison_group_summary.rds"
+  )
+)
+```
+
+# 9. Run Shiny App
+
+```{r}
+# Run user interface and server with ShinyApp.
+shiny::shinyApp(ui = ui, server = server)
+```
+
