@@ -24,6 +24,7 @@ Given:
 The importance of sample processing quality and consistency cannot be overstated. 
 
 ## Project Aims
+-------------------------------
 The purpose of this repository is to:
 
 1. Establish baseline biorepository metrics
