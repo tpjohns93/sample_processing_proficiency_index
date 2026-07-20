@@ -6,25 +6,22 @@ output: github_document
 ---
 # Sample Processing Proficiency Index
    
-## Background/Overview
+## Background
 -------------------------------
-This repository provides a reproducible workflow for monitoring sample processing quality and consistency when paired replicate samples are processed 
-in parallel, and data in the form of (i) count and (ii) ratio derived from count (dependent ratio) are recorded. The core output is the Sample Processing Proficiency Index (SPPI), a composite measure that combines both:
+This repository provides a reproducible workflow for monitoring sample processing quality and consistency when paired replicate samples are processed in parallel. The primary output of this repository is the Sample Processing Proficiency Index (SPPI), a composite measure that combines both:
 
-1. sample quality, through within-replicate viability
-2. sample consistency, through agreement between replicate tubes or wells
+1. Sample quality: captured by within-replicate sample viability
+2. Sample consistency: captured by between-replicate agreement of both viability and cell count 
 
-SPPI is useful because sample processing is a major source of technical variation in downstream experiments. Even when the biology is unchanged, differences 
-in collection, handling, isolation, and counting can alter viability, recovery, and total yield. Monitoring SPPI helps identify when processing performance 
-is strong, drifting, or inconsistent over time, across technicians, protocols, or other comparison groups.
+Sample processing provides a potential major source of technical variation affecting output of downstream experimentation. Even when the biology is unchanged, differences experienced through changes in logistics, methodology, and personal touch can alter quality and consistency of processing, affecting data generated and interpretation of outcome. Given replicate samples processed in parallel, this variability can be identified and aggregated into single metric, SPPI, which integrates broad quality and consistency metrics with equal weight.
 
 Given:
-(i)	The innate variabilities of each research participant
-(ii)	The sensitivity of research technologies deployed to assess this variation (single cell RNA seq, timsTOF MS-GC, etc.)
-(iii)	The unknown magnitude of effect within each unique cohort to be determined
-(iv)	The exploratory nature of foundational studies leading to hypothesis-driven experiment designs
+1. The innate variabilities of each research participant
+2. The sensitivity of research technologies deployed to assess this variation (single cell RNA seq, timsTOF MS-GC, etc.)
+3. The unknown magnitude of effect within each unique cohort to be determined
+4. The exploratory nature of foundational studies leading to hypothesis-driven experiment designs
 
-The importance of quality and consistency in sample processing cannot be overstated. 
+The importance of sample processing quality and consistency cannot be overstated. 
 
 ## Project Aims
 The purpose of this repository is to:
@@ -32,23 +29,25 @@ The purpose of this repository is to:
 (i) Establish baseline biorepository metrics 
 (ii) Provide reference statistics to guague all future-processing events by
 
-This importantly informs the average quality of the total biorepository storage currently on hand, and creates a tool for managing quality of all future samples to be banked, promoting a more consistent sample pool amassed over time (through decades and technicians).
+Monitoring via SPPI supports biorepository management across scales – from single-protocol laboratories to enterprise-wide operations. By establishing benchmark reference statistics, SPPI provides context for the quality of current biorepository holdings while enabling continuous monitoring of future processing events, promoting a more consistent and reliable sample repository over time. Additionally, SPPI may also be leveraged to optimize processing pipelines ahead of committting to any workflow. 
 
-Aim 1: Generate reference statistics: Assess between current processing technicians using reference_pbmc_score.Rmd
+Comparison group options generate single-parameter statistics assessed in a repository-wide manner by either: (i) lab group(s), (ii) processing technician(s), (iii) collection method(s), (iv) protocol(s), and (v) cell type(s). Thus, SPPI and the associated Dashboard Application helps identify when processing performance is strong, drifting, or inconsistent over time, across technicians, protocols, or other comparison groups. Examples include: 
 
-Aim 2: Generate new-user metrics: Assess single data-point values versus reference statistics using new_user_pbmc_score.Rmd
+- Technician: Compare SPPI between technicians to evaluate processing proficiency, training outcomes, and long-term consistency.
+- Parent Group: Compare SPPI across laboratories, institutions, or study sites to benchmark processing quality.
+- Cell Type: Compare SPPI between isolated cell populations (e.g., PBMCs, neutrophils) to evaluate workflow performance.
+- Tube Type: Compare SPPI across blood collection tube types or anticoagulants to identify optimal collection systems.
+- Protocol: Compare SPPI across isolation protocols to optimize workflows and quantify the impact of protocol modifications.
+
+SPPI prioritizes interpretability over complexity, enabling rapid identification of meaningful differences in sample processing performance. The strength of the SPPI Dashboard lies in thoughtfully tailoring the user-defined reference dataset to provide the appropriate context for each comparison, allowing the same analytical framework to address a wide range of quality assurance and process optimization questions.
 
 ## Minimum requirements to use SPPI
 -------------------------------
-This repository is intentionally structured so it can be adapted to a broad range of sample types and methods. SPPI can be calculated as long as the dataset 
+This repository is strategically structured so it may be adapted to a support a broader range of sample types and methods, and serve as a foundational add-on component of a larger variety of exhisting, custom complete workflows. SPPI may be calculated as long as the dataset 
 includes both of the following:
 
-1. Both proportion and count metrics
-2. Replicate samples processed in parallel
-
-At minimum, each paired event should have count-based readouts (ex. total, live, and dead cells) to calculate a dependent proportion (ex. viability), plus a replicate 
-identifier so the two measurements can be matched (ex. for a single paired isolation event: consistent date, parent group, technician, isolation event, cell type, tube type, and protocol).
-
+1. Count data (ex. total, live, and dead cells) and associated proportion metrics (ex. viability)
+2. Replicate samples processed in parallel (i.e. consistent ID, date, parent group, technician, isolation event, cell type, tube type, and protocol).
 
 ## Repository structure
 -------------------------------
@@ -137,14 +136,13 @@ For new datasets, the app lets you:
 This repository can be reused for another cell type or sample type as long as the new workflow still has the bare minimum needed for SPPI:
 
 - paired replicates
-- count and count-dependent ratio metrics for each replicate
+- count or quality metrics for each replicate
 - a consistent way to identify each paired event
 
 To adapt the repo, update the input data and, if needed, change the active comparison group in config.R. The existing code is already organized so that a single comparison field can drive the grouping, summaries, and plots.
 
 Typical ways to repurpose the workflow include:
 - changing the cell type being analyzed
-- changing the tube volume to tissue mass or other relevant relative reference for normalizing count data
 - changing the tube format or well-based format
 - using a different processing role or grouping variable
 - benchmarking a different laboratory workflow while keeping the same paired-replicate design
@@ -185,4 +183,4 @@ project_directory
 
 
 ## Responsibilities and Acknowledgements
-Please reach out to Taylor Johnson (tpjohns93@gmail.com) for all questions and inquiries regarding this GitHub repository.
+Please reach out to Taylor Johnson (taylor.johnson@ucsf.edu) for all questions and inquiries regarding this GitHub repository.
