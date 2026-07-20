@@ -26,8 +26,8 @@ The importance of sample processing quality and consistency cannot be overstated
 ## Project Aims
 The purpose of this repository is to:
 
-(i) Establish baseline biorepository metrics 
-(ii) Provide reference statistics to guague all future-processing events by
+1. Establish baseline biorepository metrics
+2. Provide reference statistics to guague all future-processing events by
 
 Monitoring via SPPI supports biorepository management across scales – from single-protocol laboratories to enterprise-wide operations. By establishing benchmark reference statistics, SPPI provides context for the quality of current biorepository holdings while enabling continuous monitoring of future processing events, promoting a more consistent and reliable sample repository over time. Additionally, SPPI may also be leveraged to optimize processing pipelines ahead of committting to any workflow. 
 
